@@ -1,0 +1,278 @@
+.root {
+    --color-tekst: #01161E;
+    --color-primair: #124559;
+    --color-secundair: #598392;
+    --color-accent: #AEC3B0;
+    --color-achtergrond: #EFF6E0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 12pt;
+    font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.closed-sidebar-button{
+    margin-bottom: 0.625rem;
+}
+
+nav{
+    height: 3.75rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #124559
+}
+
+.links-container{
+height: 100%;
+width: 100%;
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #EFF6E0;
+    font-family: Lexend;
+}
+
+nav svg{
+    fill: #EFF6E0;
+}
+
+nav a:hover{
+    background-color: #598392;
+}
+
+nav .home-link{
+    margin-right: auto;
+    font-weight: bold;
+}
+
+#sidebar-active{
+    display: none;
+}
+
+.open-sidebar-button, .closed-sidebar-button{
+    padding: 0 1.25rem;
+    display: none;
+    z-index: 15;
+}
+
+.hero-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
+    margin: 1.25rem auto;
+  }
+
+
+@media (max-width: 450px) {
+    .links-container{
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        width: 18.75rem;
+
+        box-shadow: -0.3125rem 0rem 0.3125rem 0rem rgba(0, 0, 0, 0.25);
+        background-color: #124559
+    }
+
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 1.25rem 1.875rem;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .closed-sidebar-button {
+        position: fixed;
+        display: block;
+        margin-right: 2rem;
+        cursor: pointer;
+    }
+
+    .closed-sidebar-button {
+        display: none;
+    }
+
+    #sidebar-active:checked ~ .open-sidebar-button {
+        display: none;
+    }
+
+    #sidebar-active:checked ~ .closed-sidebar-button {
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+    .links-container {
+        position: fixed;
+        top: 0;
+        right: -18.75rem;
+        height: 100vh;
+        width: 18.75rem;
+        transition: right 0.3s ease;
+    }
+
+    .hero {
+        height: 60vh;
+        margin-bottom: -7.5rem;
+    margin-top: -7.5rem;
+      }
+
+      .about {
+        width: 100%;
+        padding: 0.625rem;
+      }
+
+      .contact-links{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-links li{
+        list-style: none;
+        margin-bottom: 0.9375rem;
+      }
+
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh;
+        margin-bottom: -7.5rem;
+        margin-top: -7.5rem;
+      }
+
+    .about {
+        width: 90%;
+      }
+  }
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+label{
+    width: 2rem;
+    height: 2rem;
+}
+
+body{
+    background-color: #EFF6E0;
+}
+
+.about {
+    padding: 1.25rem;
+    background-color: #f7f7f7;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    margin: 1.25rem auto;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.625rem;
+  }
+  
+  .about p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 43.75rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .projects {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .project-container {
+    flex-direction: row;
+  }
+
+  .backdrop-container {
+    grid-column: 1;
+  }
+
+  .other-projects-container {
+    grid-column: 2;
+  }
+
+  .droomwerkelijkheid, .pesten {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-image{
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2.5rem;
+    padding: 1.25rem;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-links{
+    display: flex;
+    list-style: none;
+    padding: 1.25rem;
+  }
+
+  .contact-links li{
+    margin-right: 1.25rem;
+  }
+
+  .contact-links i{
+    margin-right: 0.3125rem;
+    margin-top: 0.1875rem;
+  }
